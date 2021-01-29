@@ -24,94 +24,34 @@ description:
       - 'Customizable with additional backends, frontends and microservices'
     genericName: web application
     longDescription: |
-      This Release implements a SAML2 IDP.
+      Satosa-Saml2 Spid is an intermediary between many SAML2 Service 
+      Providers and many SAML2 Identity Providers. Specifically it allows 
+      traditional Saml2 Service Providers to communicate with 
+      Spid Identity Providers adapting Metadata and AuthnRequest 
+      operations to the Spid technical requirements.
+      This solution allows us to adopt multiple proxy frontends and backends to adapt and allows to 
+      communicate systems that, due to protocol or specific limitations, traditionally could not interact each other.
+      
+      Short glossary:
+      
+      - Frontend, interface of the proxy that is configured as a SAML2 Identity Provider
+      - Backend, interface of the proxy that is configured as a SAML2 Service Provider
+      - TargetRouting, a SATOSA microservice for selecting the output backend to reach the endpoint (IdP) selected by the user
+      - Discovery Service, interface that allows users to select the authentication endpoint
 
-
-      An OIDC Provider on top of [IdentityPython](https://idpy.org/) will be
-      also available in the next releases.
-
-
-      ## **SAML2 Features**
-
-
-      uniAuth, as a SAML2 IDP, is based on
-      [pysaml2](https://github.com/IdentityPython/pysaml2). Features:
-
-
-      - HTTP-REDIRECT and POST bindings (signed authn request must be in
-      HTTP-POST binding);
-
-      - ForceAuthn;
-
-      - SLO, SAML Single Logout;
-
-      - Signed and Encrypted assertions;
-
-      - AllowCreate, nameid is stored with a persistent nameid format.
-
-
-      ## **Implementation specific Features**
-
-
-      - no restart needed on new matadata store or SP creation;
-
-      - Full Internazionalization support (i18n);
-
-      - Interactive Metadata Store definitions through the Admin Backend UI;
-
-      - Interactive ServiceProvider definition through the Admin Backend UI;
-
-      - Customizable Template and style based on [AGID
-      guidelines](https://www.agid.gov.it/it/argomenti/linee-guida-design-pa);
-
-      - MetadataStore and SP validations on save, to prevent faulty
-      configurations in production environment;
-
-      - Configurable digest algorithm and salt for Computed NameID;
-
-      - Many configurable options, for every SP we can decide:
-          - enable/disable explicitally;
-          - signature and digest algorithms;
-          - attributes release (force a set or release what requested by sp);
-          - attribute rewrite and creation, fully configurable AttributeProcessors per SP, every aspect of attribute release can be customized from scratch;
-          - agreement screen message, availability, data consent form.
-      - Configurable log rotation through uwsgi;
-
-      - Importable StoredPersistentID for each user, from migrations from
-      another IDP;
-
-      - An optional LDAP web manager with a configurable app (`ldap\_peoples`)
-      through `django-ldap-academia-ou-manager
-      <https://github.com/peppelinux/django-ldap-academia-ou-manager>`\_\_;
-
-      - Multiple LDAP sources through `pyMultiLDAP
-      <https://github.com/peppelinux/pyMultiLDAP>`\_\_;
-
-      - Multifactor support, as originally available in djangosaml2idp;
-
-      - Detailed logs.
-
-
-      ## **Characteristics**
-
-
-      uniAuth permit us to configure metadata store and federate new Service
-      Providers directly from the Admin backend interface, via Web. See
-      [Official Documentation at
-      readthedocs](https://uniauth.readthedocs.io/en/latest/index.html) for
-      usage specifications and advanced topics.
+      
     screenshots:
       - |-
-        https://raw.githubusercontent.com/UniversitaDellaCalabria/uniAuth/master/documentation/contents/login.png
+        https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid/blob/master/gallery/spid_proxy.png
       - |-
-        https://raw.githubusercontent.com/UniversitaDellaCalabria/uniAuth/master/documentation/contents/agreement.png
+        https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid/blob/master/gallery/disco.png
       - |-
-        https://raw.githubusercontent.com/UniversitaDellaCalabria/uniAuth/master/documentation/contents/validate_multi_sp.png
-    shortDescription: Identity Provider per la gestione del SingleSignOn
+        https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid/blob/master/gallery/error_page.png
+    shortDescription: A proxy that allows legacy Saml2 service providers to communicate with Spid Identity Providers
 developmentStatus: stable
 intendedAudience:
   scope:
-    - employment
+    - infrastructures
 it:
   conforme:
     gdpr: true
@@ -123,13 +63,13 @@ it:
     anpr: false
     cie: false
     pagopa: false
-    spid: false
+    spid: true
   riuso:
     codiceIPA: unical
-landingURL: 'https://github.com/UniversitaDellaCalabria/uniAuth'
+landingURL: 'https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid'
 legal:
   authorsFile: |-
-    https://raw.githubusercontent.com/UniversitaDellaCalabria/uniAuth/master/AUTHORS
+    https://raw.githubusercontent.com/UniversitaDellaCalabria/Satosa-Saml2Spid/master/AUTHORS
   license: Apache-2.0
   mainCopyrightOwner: Università della Calabria
 localisation:
@@ -142,18 +82,16 @@ maintenance:
     - affiliation: unical.it
       email: giuseppe.demarco@unical.it
       name: Giuseppe De Marco
-    - affiliation: unical.it
-      email: francesco.filicetti@unical.it
-      name: Francesco Filicetti
   type: internal
-name: uniAuth
+name: Satosa-Saml2Spid
 platforms:
   - linux
   - web
-releaseDate: '2020-01-13'
+releaseDate: '2021-01-25'
 roadmap: 'https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid/issues'
 softwareType: standalone/web
-softwareVersion: 1.2.0
-url: 'https://github.com/UniversitaDellaCalabria/uniAuth'
+softwareVersion: 0.2.0
+url: 'https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid'
 usedBy:
   - 'https://www.unical.it'
+
