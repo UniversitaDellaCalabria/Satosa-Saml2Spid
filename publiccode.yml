@@ -93,5 +93,6 @@ softwareType: standalone/web
 softwareVersion: 0.2.0
 url: 'https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid'
 usedBy:
-  - 'https://www.unical.it'
+  - Università della Calabria - https://www.unical.it
+  - Università del Piemonte Orientale - https://www.uniupo.it
 
