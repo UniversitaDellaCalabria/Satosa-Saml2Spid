@@ -1,0 +1,51 @@
+[uwsgi]
+project     = satosa-saml2spid
+base        = /opt
+
+chdir       = %(base)/%(project)/example
+
+uid         = wert
+gid         = wert
+
+socket      = 127.0.0.1:3002
+master      = true
+processes   = 1
+#threads     = 2
+
+# set max connections to 1024 in uWSGI
+listen = 305
+
+wsgi-file   = %(base)/%(project)/env/lib/python3.10/site-packages/satosa/wsgi.py
+callable = app
+# se installato con pip non serve il plugin perchè embedded
+#plugins    = python
+
+# con virtualenv non serve
+#pythonpath     = %(base)/%(project)/%(project)
+
+virtualenv  = %(base)/%(project)/env
+
+honour-stdin = True
+#logto = /var/log/uwsgi/%(project).log
+#log-maxsize = 100000000
+#log-backupname = /var/log/uwsgi/%(project).old.log
+
+#module      = django_saml2_idp.wsgi:application
+
+vacuum      = True
+
+# respawn processes after serving ... requests
+max-requests    = 512
+
+# respawn processes taking more than takes more then ... seconds
+harakiri    = 20000
+
+# avoid: invalid request block size: 4420 (max 4096)...skip
+buffer-size=32768
+
+#env         = %(project).settings
+
+pidfile     = /var/log/uwsgi/%(project).pid
+touch-reload    = %(base)/%(project)/proxy_conf.yaml
+stats           = 127.0.0.1:9193
+stats-http      = True
