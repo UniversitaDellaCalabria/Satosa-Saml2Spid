@@ -1,0 +1,99 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+categories:
+  - identity-management
+dependsOn:
+  open:
+    - name: Python
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: ''
+description:
+  en:
+    documentation: |-
+      https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid/blob/master/README.md
+    features:
+      - Saml2 IdP
+      - Saml2 SP
+      - Saml2 proxy to SPID Saml
+      - compliant to spid-saml-check validations
+      - 'Customizable with additional backends, frontends and microservices'
+    genericName: web application
+    longDescription: |
+      Satosa-Saml2 Spid is an intermediary between many SAML2 Service 
+      Providers and many SAML2 Identity Providers. Specifically it allows 
+      traditional Saml2 Service Providers to communicate with 
+      Spid Identity Providers adapting Metadata and AuthnRequest 
+      operations to the Spid technical requirements.
+      This solution allows us to adopt multiple proxy frontends and backends to adapt and allows to 
+      communicate systems that, due to protocol or specific limitations, traditionally could not interact each other.
+      
+      Short glossary:
+      
+      - Frontend, interface of the proxy that is configured as a SAML2 Identity Provider
+      - Backend, interface of the proxy that is configured as a SAML2 Service Provider
+      - TargetRouting, a SATOSA microservice for selecting the output backend to reach the endpoint (IdP) selected by the user
+      - Discovery Service, interface that allows users to select the authentication endpoint
+
+      
+    screenshots:
+      - |-
+        https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid/blob/master/gallery/spid_proxy.png
+      - |-
+        https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid/blob/master/gallery/disco.png
+      - |-
+        https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid/blob/master/gallery/error_page.png
+    shortDescription: A proxy that allows legacy Saml2 service providers to communicate with Spid Identity Providers
+developmentStatus: stable
+intendedAudience:
+  scope:
+    - infrastructures
+it:
+  conforme:
+    gdpr: true
+    lineeGuidaDesign: false
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: true
+  riuso:
+    codiceIPA: unical
+landingURL: 'https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid'
+legal:
+  authorsFile: |-
+    https://raw.githubusercontent.com/UniversitaDellaCalabria/Satosa-Saml2Spid/master/AUTHORS
+  license: Apache-2.0
+  mainCopyrightOwner: Università della Calabria
+localisation:
+  availableLanguages:
+    - it
+    - en
+  localisationReady: true
+maintenance:
+  contacts:
+    - affiliation: unical.it
+      email: giuseppe.demarco@unical.it
+      name: Giuseppe De Marco
+  type: internal
+name: Satosa-Saml2Spid
+platforms:
+  - linux
+  - web
+releaseDate: '2021-01-25'
+roadmap: 'https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid/issues'
+softwareType: standalone/web
+softwareVersion: 0.2.0
+url: 'https://github.com/UniversitaDellaCalabria/Satosa-Saml2Spid'
+usedBy:
+  - Università della Calabria - https://www.unical.it
+  - Università del Piemonte Orientale - https://www.uniupo.it
+  - Istituto Superiore per la Protezione e la Ricerca Ambientale - https://www.isprabiente.gov.it
+
