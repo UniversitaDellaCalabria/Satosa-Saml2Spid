@@ -22,3 +22,8 @@ requests # >=2.2,<2.3
 asyncio
 aiohttp>=3.9,<3.10
 sd-jwt
+
+# Unical account linking
+git+https://github.com/UniversitaDellaCalabria/SATOSA-uniExt.git
+# pyMultiLdap
+git+https://github.com/peppelinux/pyMultiLDAP.git
