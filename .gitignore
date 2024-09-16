@@ -17,4 +17,5 @@ example/private/*
 example_sp/djangosaml2_sp/sqlite3.db
 project/*
 docker-example/*
+nginx/*
 Docker-compose/.env

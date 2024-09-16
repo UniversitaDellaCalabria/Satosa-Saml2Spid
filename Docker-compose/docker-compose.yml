@@ -131,10 +131,10 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ../docker-example/nginx/nginx.conf_uwsgi_pass:/etc/nginx/nginx.conf:ro
-      - ../docker-example/nginx/50x.html:/usr/share/nginx/html/50x.html:ro
-      - ../docker-example/nginx/404.html:/usr/share/nginx/html/404.html:ro
-      - ../docker-example/nginx/403.html:/usr/share/nginx/html/403.html:ro
+      - ../nginx/nginx.conf_uwsgi_pass:/etc/nginx/nginx.conf:ro
+      - ../nginx/50x.html:/usr/share/nginx/html/50x.html:ro
+      - ../nginx/404.html:/usr/share/nginx/html/404.html:ro
+      - ../nginx/403.html:/usr/share/nginx/html/403.html:ro
       - ../docker-example/static:/var/www/html
       - nginx_certs:/etc/nginx/certs:ro
     networks:
