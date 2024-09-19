@@ -116,7 +116,7 @@ services:
     networks:
       - satosa-saml2spid
     healthcheck:
-      test: wget -O - https://satosa-nginx/Saml2IDP/metadata --no-check-certificate || exit 1
+      test: wget -O - https://${SATOSA_HOSTNAME:-localhost}/Saml2IDP/metadata --no-check-certificate || exit 1
       interval: 30s
       retries: 10
       start_period: 30s
@@ -135,8 +135,8 @@ services:
       - ../nginx/50x.html:/usr/share/nginx/html/50x.html:ro
       - ../nginx/404.html:/usr/share/nginx/html/404.html:ro
       - ../nginx/403.html:/usr/share/nginx/html/403.html:ro
+      - ../nginx/certs:/etc/nginx/certs:ro
       - ../docker-example/static:/var/www/html
-      - nginx_certs:/etc/nginx/certs:ro
     networks:
       - satosa-saml2spid
     environment:
