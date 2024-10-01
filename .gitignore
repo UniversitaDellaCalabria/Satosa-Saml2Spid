@@ -19,3 +19,4 @@ project/*
 docker-example/*
 nginx/*
 Docker-compose/.env
+Docker-compose/*.prod.*
